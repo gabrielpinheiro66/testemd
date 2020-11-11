@@ -10,14 +10,16 @@ Para um projeto em específico, estávamos usando uma RaspberryPi como um contro
 
  ### Apresentação do código base em si:
 
-    import threading
-    class Leitor(threading.Thread):
-        def __init__ (self, *args, **kwargs):
-            super(Leitor, self).__init__(*args, **kwargs)
-            # Definir variáveis iniciais aqui. Exemplo:
-            self.const = 1.0
-        def run(self):
-            # AQUI ESTARÁ O LOOP QUE SE REPETIRÁ EM PARALELO COM O PROGRAMA
+~~~python3
+import threading
+class Leitor(threading.Thread):
+	def __init__ (self, *args, **kwargs):
+		super(Leitor, self).__init__(*args, **kwargs)
+		# Definir variáveis iniciais aqui. Exemplo:
+		self.const = 1.0
+	def run(self):
+		# AQUI ESTARÁ O LOOP QUE SE REPETIRÁ EM PARALELO COM O PROGRAMA
+~~~
 
 Como pode ser visto, apenas há a importação da biblioteca threading e a declaração da classe Leitor que nós usaremos. Sendo que ela herda a classe Thread. No código principal, assim seria declarado o nosso Leitor:
 
