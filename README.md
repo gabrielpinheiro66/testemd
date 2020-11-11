@@ -74,6 +74,7 @@ Por último há um metodo **__del__** apenas para caso seja necessário apagar o
 
 Assim, ficaria o funcionamento:
 
+~~~python3
     sensor = Vazao(preco) ## declaração levando a variavel preco
     sensor.start() ## comeca o loop
     
@@ -81,7 +82,7 @@ Assim, ficaria o funcionamento:
     
     sensor.stop() ## para parar o loop
     del sensor ## deletar o objeto sensor
-    
+~~~
     
 ### Porque o time.sleep?
 
