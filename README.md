@@ -23,14 +23,16 @@ class Leitor(threading.Thread):
 
 Como pode ser visto, apenas há a importação da biblioteca threading e a declaração da classe Leitor que nós usaremos. Sendo que ela herda a classe Thread. No código principal, assim seria declarado o nosso Leitor:
 
-    objeto = Leitor() ## aqui foi declarado o objeto do tipo Leitor
-    Leitor.start() ## começa a ser executado o loop escrito em run
-    
+~~~python3
+objeto = Leitor() ## aqui foi declarado o objeto do tipo Leitor
+Leitor.start() ## começa a ser executado o loop escrito em run
+~~~    
 
  ### Apresentação de um código do projeto:
  
  Agora será apresentado e explicado um código utilizado no projeto para o sensor de vazão:
  
+ ~~~python3
     class Vazao(threading.Thread):
 	def __init__ (self, preco, *args, **kwargs):
 		super(Vazao, self).__init__(*args, **kwargs)
@@ -59,6 +61,7 @@ Como pode ser visto, apenas há a importação da biblioteca threading e a decla
 		del self
 	def pulsos(self):
 		return (self.dobro/2)
+~~~
 		
 		
 Como pode ser notado, as funções **get_litros**, **get_total** serão usados para retornar no código principal a quantidade de litros lida e o preço total, respectivamente.
@@ -82,14 +85,17 @@ Assim, ficaria o funcionamento:
     
 ### Porque o time.sleep?
 
-Como pode ser notado, no final do loop do método run() foi usada uma linha 
+Como pode ser notado, no final do loop do método run() foi usada uma linha
 
+~~~python3
     time.sleep(0.0000000001)
+~~~
     
 Essa linha serve mesmo como delay no loop com a intenção de **otimizar o processamento**. O número 0.0000000001 foi definido por testes. Quanto maior o valor, pior a medição e, quanto menor, mais as threads irão comprometer o resto do código
 
 ### Último exemplo:
 
+~~~python3
     class Leitor(threading.Thread):
 	def __init__ (self, *args, **kwargs):
 		super(Leitor, self).__init__(*args, **kwargs)
@@ -122,6 +128,7 @@ Essa linha serve mesmo como delay no loop com a intenção de **otimizar o proce
 	def zerar(self):
 		self.countcerto = 1
 		self.countnone = 0
+~~~
 	
 No código o leitor RFID, foi criada uma tag **_tem_cartao** que, será retornada no método **tem_cartao**. Caso sejam True, significa que tem cartão inserido. Caso sejam False, indica o contrário.
 
