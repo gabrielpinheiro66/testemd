@@ -33,7 +33,7 @@ Leitor.start() ## começa a ser executado o loop escrito em run
  Agora será apresentado e explicado um código utilizado no projeto para o sensor de vazão:
  
  ~~~python3
-    class Vazao(threading.Thread):
+class Vazao(threading.Thread):
 	def __init__ (self, preco, *args, **kwargs):
 		super(Vazao, self).__init__(*args, **kwargs)
 		self.litros = 0.0
@@ -75,13 +75,13 @@ Por último há um metodo **__del__** apenas para caso seja necessário apagar o
 Assim, ficaria o funcionamento:
 
 ~~~python3
-    sensor = Vazao(preco) ## declaração levando a variavel preco
-    sensor.start() ## comeca o loop
+sensor = Vazao(preco) ## declaração levando a variavel preco
+sensor.start() ## comeca o loop
     
-    total = sensor.get_total() ## caso queira o pegar o total, por exemplo
+total = sensor.get_total() ## caso queira o pegar o total, por exemplo
     
-    sensor.stop() ## para parar o loop
-    del sensor ## deletar o objeto sensor
+sensor.stop() ## para parar o loop
+del sensor ## deletar o objeto sensor
 ~~~
     
 ### Porque o time.sleep?
@@ -89,7 +89,7 @@ Assim, ficaria o funcionamento:
 Como pode ser notado, no final do loop do método run() foi usada uma linha
 
 ~~~python3
-    time.sleep(0.0000000001)
+time.sleep(0.0000000001)
 ~~~
     
 Essa linha serve mesmo como delay no loop com a intenção de **otimizar o processamento**. O número 0.0000000001 foi definido por testes. Quanto maior o valor, pior a medição e, quanto menor, mais as threads irão comprometer o resto do código
@@ -97,7 +97,7 @@ Essa linha serve mesmo como delay no loop com a intenção de **otimizar o proce
 ### Último exemplo:
 
 ~~~python3
-    class Leitor(threading.Thread):
+class Leitor(threading.Thread):
 	def __init__ (self, *args, **kwargs):
 		super(Leitor, self).__init__(*args, **kwargs)
 		self.uid = ''
