@@ -25,7 +25,7 @@ Como pode ser visto, apenas há a importação da biblioteca threading e a decla
 
 ~~~python3
 objeto = Leitor() ## aqui foi declarado o objeto do tipo Leitor
-Leitor.start() ## começa a ser executado o loop escrito em run
+objeto.start() ## começa a ser executado o loop escrito em run
 ~~~    
 
  ### Apresentação de um código do projeto:
