@@ -1,5 +1,7 @@
 # Programa principal (máquina de estados)
 
+---
+
 ### Antes da máquina:
 
 ~~~python3
@@ -63,6 +65,8 @@ Como pode ser notado, aqui temos apenas algumas definições. Em ordem, o que ca
 - O objeto do leitorRFID é criado e a thread dele é iniciada. Observe que ele continuará durante todo o funcionamento dentro do loop, isso  foi definido assim pois o leitor rfid é usado em praticamente todo o funcionamento dos estados. Enquanto isso, observaremos mais adiante que a thread do sensor de vazão é parada quando não há necessidade dela;
 - E por último, o while true irá começar nosso loop.
 
+---
+
 ### Estado 'lig' (máquina acabou de ligar):
 
 O estado inicial tem a seguinte proposta: Ler no banco de dados qual o nome do chopp e qual o seu preço. Assim, segue o código:
@@ -85,6 +89,7 @@ O estado inicial tem a seguinte proposta: Ler no banco de dados qual o nome do c
 
 Observe que, caso o programa defina 'preco' ou 'chope' com o valor 'None', isso será reconhecido como falha com o banco de dados e o programa será **INTERROMPIDO**. Definindo corretamente os valores do preço e do nome do chopp, o programa segue para o estado 0
 
+---
 
 ### Estado 0 (esperando cartão):
 
@@ -135,6 +140,7 @@ if (leitor.tem_cartao()):
 Dessa forma, seguimos com linhas mais fáceis de entender. Primeiro, as variáveis de contagem do RFID são zeradas mais uma vez. Aqui pois agora iremos trabalhar com o cartão dentro da máquina, diferente de como estava antes. Caso isso não fosse feito, haveria como se fosse um 'lixo de memória'.
 Depois disso, há os logs e o aviso no display do cartão inserido. Assim seguimos para o estado 1.
 
+---
 
 ### Estado 1 (verificando cartão):
 
@@ -171,7 +177,7 @@ Caso o saldo seja maior que 0, o sensor é definido, a thread iniciada e passare
 
 Caso não haja saldo suficiente ou o cartão não seja identificado, isso é avisado na tela. As variaveis de contagem do leitorRFID são zeradas mais uma vez e a máquina retorna ao estado 0 (esperando cartão).
 
-
+---
 
 ### Estado 2 (chopp sendo retirado):
 
@@ -229,7 +235,7 @@ Quando a máquina sai do loop, pode ser por dois motivos, 1: o valor do chopp re
 
 OBS.: **print(sensor.pulsos())** essa linha é utilizada para calibrar o sensor, veja mais no guia de como fazer isso.
 
-
+---
 
 ### Estado 3 (salvando transação (ou não)):
 
