@@ -170,12 +170,12 @@ Outros métodos da classe:
 
 ~~~python3
 def get_uid(self):
-		return self.uid
-	def tem_cartao(self):
-		return self._tem_cartao.isSet()
-	def zerar(self):
-		self.countcerto = 1
-		self.countnone = 0
+	return self.uid
+def tem_cartao(self):
+	return self._tem_cartao.isSet()
+def zerar(self):
+	self.countcerto = 1
+	self.countnone = 0
 ~~~
 
 Esses são os métodos que serão usados no código principal (máquinaJyba). Um get para o uid, um método para verificar o estado da flag _tem_cartao e um método para zerar os contadores.
