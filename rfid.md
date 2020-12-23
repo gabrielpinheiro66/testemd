@@ -2,6 +2,8 @@
 
 Grande parte do que foi feito aqui foi seguindo [este tutorial](https://www.filipeflop.com/blog/controle-de-acesso-rfid-com-raspberry-pi/)
 
+---
+
 ### Ligação na placa:
 
 | Pino Leitor RFID | Pino Raspberry Pi (BOARD) |
@@ -60,7 +62,8 @@ Grande parte do que foi feito aqui foi seguindo [este tutorial](https://www.fili
         cd SPI-Py
         sudo python3 setup.py install
         ~~~
-	
+
+---
 	
 ### Ler cartão:
 
@@ -97,6 +100,7 @@ Foi usado o try e o finally para que, caso haja qualquer problema quando o códi
 
 Sim, a explicação para o que foi feito é: Apenas adicionamos à classe MFRC522 o método closeSPI() já existente na classe spi (que o própio MFRC522 já utilizava)
 
+---
 
 ### Traduzir o uid:
 
@@ -119,7 +123,7 @@ def traduzir(uid):
     return None
 ~~~
 
-
+---
 
 ### Classe Leitor:
 
