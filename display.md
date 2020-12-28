@@ -6,6 +6,14 @@ Basicamente tudo que fizemos aqui veio da biblioteca CharLCD. Sugiro ler sobre e
 
 - https://rplcd.readthedocs.io/
 
+Se não me engano, fizemos a instalação manual seguindo algum tutorial que não acho mais. No entando algumas coisas que sei é que, para instalação manual:
+
+- Primeiro deve-se baixar a pasta 'Adafruit_Python_CharLCD'
+- Depois instalá-la entrando nela e utilizando o comando 'sudo python3 setup.py install'
+- Por último deve-se ativar o I2C [Use o comando 'sudo raspi-config'. Vá até 'Interfacing options' e 'I2C' e ative]
+
+
+
 ---
 
 ### Especificações do display utilizado:
