@@ -14,16 +14,16 @@ Alguns sites que talves possam ser úteis:
 ### Especificações:
 
 - Válvula solenóide:
-    - aaaaaaaaaaaaaaaaaaaa
+    - 
 
 - Sensor de vazão: 
-    - aaaaaaaaaaaaaaaaaaaa
+    - 
 
 ---
 
 ### Ligação da válvula: 
 
-PEDRO Q FEZ. USAMOS RELÉ
+
 
 
 ---
